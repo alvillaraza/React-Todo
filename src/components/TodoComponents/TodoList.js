@@ -4,20 +4,30 @@
 import React from 'react';
 import Todo from './Todo';
 
-const TodoList = props => {
-    // console.log(props)
+
+class TodoList extends React.Component {
+    constructor(props){
+        super(props);
+        
+    }
+    
+
+ 
+
+  render () {
     return (
         <div>
-            {props.chores.map(item => (
+            {this.props.chores.map(item => (
             
-                <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
+                <Todo key={item.id} item={item} toggleItem={this.props.toggleItem} />
                 
             ))}
-            <button onClick={props.clearDone}>
+            <button onClick={this.props.filter} >
                 Clear Done
             </button>
         </div>
     )
+}
 }
 
 export default TodoList;
